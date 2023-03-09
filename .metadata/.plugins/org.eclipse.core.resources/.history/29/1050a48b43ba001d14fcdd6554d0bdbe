@@ -1,0 +1,10 @@
+package jdbc;
+
+public class CreateExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

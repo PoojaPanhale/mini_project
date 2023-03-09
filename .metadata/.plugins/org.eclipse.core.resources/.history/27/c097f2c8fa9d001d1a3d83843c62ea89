@@ -1,0 +1,21 @@
+package task;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class StudentMain {
+
+	public static void main(String[] args) throws IOException {
+		Student s=new Student(101,"pooja","wai");
+		Student s1=new Student(101,"pooja","wai");
+		Student s2=new Student(101,"pooja","wai");
+		FileOutputStream fout=new FileOutputStream("d:/Student1.txt");
+		 ObjectOutputStream	out =new ObjectOutputStream(fout);
+		out.writeObject(s);
+		out.writeObject(s1);
+		out.writeObject(s2);
+		out.close();
+	}
+
+}

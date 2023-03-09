@@ -1,0 +1,14 @@
+package com.deo;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.deo.impl.IPLDeoImpl;
+import com.entity.IPL;
+
+public interface IPLDeo {
+	public List<IPLDeoImpl> findAll() throws ClassNotFoundException, SQLException;
+	public void insertIPL(IPL i);
+	public void updateIPL(IPL i);
+	public void deleteIPL(IPL i);
+	}

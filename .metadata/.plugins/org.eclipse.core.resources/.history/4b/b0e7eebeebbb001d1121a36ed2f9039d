@@ -1,0 +1,23 @@
+package service;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.deo.impl.IPLDeoImpl;
+import com.entity.IPL;
+
+public class iplService {
+	
+public List<IPLDeoImpl> ViewAll() throws ClassNotFoundException, SQLException 
+{
+	List<IPLDeoImpl>list=new IPLDeoImpl().findAll();
+
+	for (IPLDeoImpl i:list)
+	{
+	System.out.println(i);
+
+}
+	return list;
+
+}
+}

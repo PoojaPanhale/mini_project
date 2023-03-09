@@ -1,0 +1,19 @@
+package task;
+
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class StudentMain {
+
+	public static void main(String[] args) throws IOException {
+		 FileWriter fw=new FileWriter("d:/Student1.csv");
+	        fw.write("id,Name,Adress");
+	        fw.write("\n12,ruturaj,phaltan");
+	        fw.write("\n13,Anita,Nagar"); 
+	        fw.write("\n14,pooja,wai");
+	        fw.close();
+	}
+
+}

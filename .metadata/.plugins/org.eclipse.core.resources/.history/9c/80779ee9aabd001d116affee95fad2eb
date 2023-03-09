@@ -1,0 +1,59 @@
+package Book_UI;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+import Service_Implementation.Book_implementation;
+
+
+
+public class Book_Information_Main 
+{
+
+	public static void main(String[] args)throws NumberFormatException, IOException {
+		String s;
+	      Scanner sc=new Scanner(System.in);
+	      System.out.println("=========================WELCOME TO ONLINE BOOK STORE===============================");
+	     
+	    System.out.println("\n1.Show the Avaiable BookList");
+	      System.out.println("\n2.Add The new Book");
+	      System.out.println("\n3.Update Book_Information");
+	      System.out.println("\n4.Delete  Book_Information");
+
+
+
+	      System.out.println("\nOnline_Book_Store");
+	      Book_implementation b=new  Book_implementation();
+
+	      do
+	      {
+	    	  System.out.println("\nEnter the choice ");
+	    	  int choice=sc.nextInt();
+	    	  switch(choice)
+	    	  {
+	    	  case 1:
+	    		  b.findAllBook_Information ();
+	    		  break;
+	    	  case 2:
+	    		  b.addBook_Information ();
+	    		  break;
+	    	  case 3:
+	    		b.Customer_InfromationBuyerInformation();
+	    		break;
+	    	  case 4:
+	    		  b.addBook_Information ();
+	    		  break;
+	    	  }
+	    	  
+	    	  System.out.println("do you want to continue");
+	    	   s=sc.next();
+
+	       }
+		  while(s.equals("yes"));
+
+	}
+
+
+	}
+
+

@@ -1,0 +1,24 @@
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class UpdateExample {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/capagiminicourse","root","Pooja@123");
+		PreparedStatement statement=con.prepareStatement("update empnew set enmae=?where id=?");
+        statement.setString(1,"ruturaj");
+        
+        statement.setInt(2, 12);
+        statement.executeUpdate();
+        con.close();
+        System.out.println("update successfully");
+
+	}
+
+}

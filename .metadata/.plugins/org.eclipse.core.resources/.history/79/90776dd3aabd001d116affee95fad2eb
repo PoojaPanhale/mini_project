@@ -1,0 +1,152 @@
+package Service_Implementation;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import Services.Book_Services;
+
+import book.Book_Information;
+
+public class Book_implementation implements Book_Services{
+	 List<Book_Information>list=new ArrayList<Book_Information>();
+	 public Book_implementation()
+	 {
+		 Book_Information b1=new Book_Information(1001,"chhava",500,"Novel");
+		 Book_Information b2=new Book_Information(1002,"chhava",500,"Novel");
+		 Book_Information b3=new Book_Information(1003,"chhava",500,"Novel");
+		 Book_Information b4=new Book_Information(1004,"chhava",500,"Novel");
+		 Book_Information b5=new Book_Information(1005,"chhava",500,"Novel");
+		 Book_Information b6=new Book_Information(1006,"chhava",500,"Novel");
+		 Book_Information b7=new Book_Information(1007,"chhava",500,"Novel");
+		 Book_Information b8=new Book_Information(1008,"chhava",500,"Novel");
+		 Book_Information b9=new Book_Information(1009,"chhava",500,"Novel");
+		 Book_Information b10=new Book_Information(1010,"chhava",500,"Novel");
+		 list.add(b1);
+		 list.add(b2);
+		 list.add(b3);
+		 list.add(b4);
+		 list.add(b5);
+		 list.add(b6);
+		 list.add(b7);
+		 list.add(b8);
+		 list.add(b9);
+		 list.add(b10);
+	 }
+	@Override
+	public void addBook_Information() {
+		Scanner sc=new Scanner(System.in);
+		 System.out.println("enter the Book_id");
+		  int Book_id=sc.nextInt();
+		  System.out.println("enter the Book_Name");
+           String Book_Name=sc.next();
+		  System.out.println("enter the Book_Price");
+
+		  float Book_Price=sc.nextFloat();
+		  System.out.println("enter the Book_Type");
+
+		  String Book_Type=sc.next();
+		 
+		  Book_Information b2=new  Book_Information(Book_id,Book_Name,Book_Price,Book_Type);
+		  list.add(b2);
+	}
+	@Override
+	public void updateBook_Information() throws NumberFormatException, IOException {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter id:");
+		int id=sc.nextInt();
+		int flag=0,index=0;
+		Book_Information s=null;
+		for(Book_Information b:list)
+		{
+			if(b.getBook_id()==id)
+			{
+				flag=1;
+				index=list.indexOf(b);
+				s=b;
+				System.out.println(s);
+				break;
+			}
+		}
+		
+		if(flag==1)
+		{
+			System.out.println("enter the Book_name");
+			  String Book_Name=sc.next();
+			  System.out.println("enter the Book_Price");
+
+			  float Book_Price=sc.nextFloat();
+			  System.out.println("enter the Book_Type");
+
+			  String Book_Type=sc.next();
+			
+			  s.setBook_Name(Book_Name);
+			  s.setBook_Price(Book_Price);
+			  s.setBook_Type(Book_Type);
+			 
+			  list.set(index, s);
+			  System.out.println("============================================================================================");
+			  System.out.println("Book Information updated");
+		}
+		else
+		{
+			System.out.println("Book does not exist!!!!");
+		}
+		 System.out.println("============================================================================================");
+		
+	}
+
+		
+	
+	@Override
+	public void deleteBook_information() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter id:");
+		int id=sc.nextInt();
+		int flag=0,index=0;
+		Book_Information s=null;
+		for(Book_Information b:list)
+		{
+			if(id==b.getBook_id())
+			{
+				flag=1;
+				index=list.indexOf(b);
+				s=b;
+				System.out.println(s);
+				break;
+			}
+		}
+		 System.out.println("============================================================================================");
+		if(flag==0)
+		{
+			
+
+			  System.out.println("Book information does not exist");
+		}
+		else
+		{
+			list.remove(s);
+			System.out.println("Book information deleted successfully");
+		}
+		
+	}
+	@Override
+	public void findAllBook_Information() {
+
+		if(list.size()==0)
+		{
+		
+			
+				System.out.println("No record found!!");
+			
+		}
+		for( Book_Information s1:list)
+		{
+			System.out.println(s1);
+		}
+		
+		
+	}
+
+	}

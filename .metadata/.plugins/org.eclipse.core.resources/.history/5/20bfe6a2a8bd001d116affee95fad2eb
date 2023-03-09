@@ -1,0 +1,49 @@
+package register_user;
+
+public class BuyerInformation {
+private String Buyer_Name;
+private String Buyer_Address;
+private String Buyer_PhoneNo;
+
+public BuyerInformation()
+{
+	}
+
+public BuyerInformation(String buyer_Name, String buyer_Address, String buyer_PhoneNo) {
+	super();
+	Buyer_Name = buyer_Name;
+	Buyer_Address = buyer_Address;
+	Buyer_PhoneNo = buyer_PhoneNo;
+}
+
+public String getBuyer_Name() {
+	return Buyer_Name;
+}
+
+public void setBuyer_Name(String buyer_Name) {
+	Buyer_Name = buyer_Name;
+}
+
+public String getBuyer_Address() {
+	return Buyer_Address;
+}
+
+public void setBuyer_Address(String buyer_Address) {
+	Buyer_Address = buyer_Address;
+}
+
+public String getBuyer_PhoneNo() {
+	return Buyer_PhoneNo;
+}
+
+public void setBuyer_PhoneNo(String buyer_PhoneNo) {
+	Buyer_PhoneNo = buyer_PhoneNo;
+}
+
+@Override
+public String toString() {
+	return "BuyerInformation [Buyer_Name=" + Buyer_Name + ", Buyer_Address=" + Buyer_Address + ", Buyer_PhoneNo="
+			+ Buyer_PhoneNo + "]";
+}
+
+}

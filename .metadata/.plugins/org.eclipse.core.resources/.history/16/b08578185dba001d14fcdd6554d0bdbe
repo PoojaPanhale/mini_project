@@ -1,0 +1,73 @@
+package com.deo.impl;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.deo.IPLDeo;
+import com.entity.IPL;
+
+
+
+
+public class IPLDaoImpl implements IPLDeo{
+
+
+
+
+	private void setState(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	private void setCity(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	private void setTname(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	private void setteamid(int int1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void insertIPL(IPL i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateIPL(IPL i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteIPL(IPL i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public List<IPL> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+}

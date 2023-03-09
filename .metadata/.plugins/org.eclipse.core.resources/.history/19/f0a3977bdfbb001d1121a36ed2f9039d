@@ -1,0 +1,83 @@
+package com.deo.impl;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import com.deo.IPLDeo;
+import com.entity.IPL;
+
+//import jdbc.Employee;
+
+public class IPLDeoImpl implements IPLDeo {
+
+	@Override
+	public List<IPLDeoImpl> findAll() throws ClassNotFoundException, SQLException {
+		
+		
+			List<IPLDeoImpl> list=new ArrayList<IPLDeoImpl>();
+					Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/capgiminicourse","root","Pooja@123");
+	      
+
+	        PreparedStatement statement=con.prepareStatement("select * from ipl");
+	        ResultSet rs=statement.executeQuery();
+	        while(rs.next())
+	        {
+	        	IPLDeoImpl e=new IPLDeoImpl();
+
+	        	e.setteamid(rs.getInt(1));
+	        	e.setTname(rs.getString(2));
+	        	e.setCity(rs.getString(3));
+	        	e.setState(rs.getString(4));
+	        	list.add(e);
+	        }
+	        con.close();
+			
+		return list;
+		
+	
+	}
+
+	private void setState(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setCity(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setTname(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setteamid(int int1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insertIPL(IPL i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateIPL(IPL i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteIPL(IPL i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
